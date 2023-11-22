@@ -1,0 +1,356 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clrGreen: #8bc540;
+    --clrWhite: whitesmoke;
+}
+
+html, body {
+    font-family: sans-serif;
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.section .bg-image .bg-desktop {
+    display: none;
+}
+
+.section .bg-image {
+    width: 100%;
+    height: 100vh;
+/* 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: fixed;
+    inset: 0; */
+}
+
+.section .bg-image .img-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+.main .section .article {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1rem;
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.main .section .article .bg-image-wrapper {
+    width: 100%;
+    height: 27rem;
+
+    background-color: white;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bg-image-wrapper .shape {
+    clip-path: polygon(0 0, 100% 0%, 100% 70%, 50% 100%, 0 70%);
+    background-color: var(--clrGreen);
+
+    height: 7rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.3rem;
+}
+
+.bg-image-wrapper .bg-left {
+    width: 100%;
+    position: relative;
+}
+
+.bg-left .shape-text {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.shape-text p {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--clrWhite);
+}
+
+.shape-text small {
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    color: var(--clrWhite);
+}
+
+.bg-image-wrapper .bg-right {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    padding: 0 1rem;
+}
+
+.bg-right .bg-right-top {
+    font-size: 1.45rem;
+    text-align: center;
+    width: 100%;
+}
+
+.bg-right-top p{
+text-transform: capitalize;
+color: var(--clrGreen);
+font-weight: 600;
+}
+
+.bg-right-top span {
+    color: gray;
+}
+
+.bg-right .bg-right-below {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-content: center;
+    gap: 1rem;
+
+    padding: 0 0 1rem 0;
+}
+
+.bg-right-below .bg-input-div {
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.bg-input-div .bg-input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.bg-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-right-below .sched-btn {
+    width: 100%;
+    background-color: var(--clrGreen);
+    border: 1.5px solid rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-right-below .sched-btn:hover {
+    opacity: 90%;
+    border: 1.5px solid var(--clrGreen);
+}
+
+.sched-btn button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    color: var(--clrWhite);
+    text-transform: uppercase;
+    padding: 0.8rem 0;
+}
+
+/*** LANDSCAPE ***/
+@media only screen and (min-width: 576px) {
+    .main .section .article .bg-image-wrapper {
+        width: 24rem;
+    }
+
+    .shape-text p {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    .section .bg-image .bg-mobile {
+        display: none;
+    }
+
+    .section .bg-image .bg-desktop {
+        display: flex;
+    }
+
+    .main .section .article {
+        padding: 2rem 1rem;
+        align-items: end;
+    }
+
+    .main .section .article .bg-image-wrapper {
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+
+    .bg-image-wrapper .shape {
+        clip-path: polygon(0% 0%, 75% 0%, 95% 50%, 75% 100%, 0% 100%);
+    
+        height: 7rem;
+    }
+
+    .bg-image-wrapper .bg-left {
+        width: 40%;
+    }
+
+    .bg-left .shape-text {
+        width: 15.5rem;
+    }
+
+    .bg-image-wrapper .bg-right {
+        padding: 0 1rem;
+        width: 100%;
+        
+        align-items: center;
+    }
+
+    .bg-right .bg-right-top {
+        font-size: 1.5rem;
+    }
+
+    .bg-right .bg-right-below {
+        width: 100%;
+
+        display: flex;
+        padding: 0;
+    }
+
+    .bg-right-below .bg-input-div {
+        padding: 0.5rem;
+    }
+
+    .sched-btn button {
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .container-xl {
+        max-width: 1920px;
+    }
+}
+
+/*** PORTRAIT ***/
+@media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    .main .section .article .bg-image-wrapper {
+        width: 24rem;
+    }
+}
+
+@media only screen 
+    and (min-device-width: 1024px) 
+    and (max-device-width: 1366px)
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1) {
+
+    .section .bg-image .bg-mobile {
+        display: flex;
+    }
+    
+    .section .bg-image .bg-desktop {
+        display: none;
+    }
+    
+
+    .main .section .article {
+        align-items: center;
+    }
+
+    .main .section .article .bg-image-wrapper {
+        width: 24rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .bg-image-wrapper .shape {
+        clip-path: polygon(0 0, 100% 0%, 100% 70%, 50% 100%, 0 70%);
+    }
+
+    .bg-image-wrapper .bg-left {
+        width: 100%;
+    }
+
+    .bg-left .shape-text {
+        width: 100%;
+    }
+
+    .bg-right .bg-right-below {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 0 1rem 0;
+    }
+
+    .bg-right-below .bg-input-div {
+        padding: 0.8rem;
+    }
+
+    .sched-btn button {
+        padding: 0.8rem 0;
+    }
+}
